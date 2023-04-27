@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/test.css">
+    <title>Jeu du pierre papier ciseaux</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.18.0/full/pyodide.js"></script>
+</head>
+<body>
+    <main role="main" class="flex flex-col items-center justify-center min-h-screen">
+        <div class="w-6/12 mx-auto">
+            <h1 class="text-center text-5xl font-extrabold leading-none tracking-tight">
+                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-green-500">
+                    Jeu du pierre papier ciseaux
+                </span> 
+            </h1>
+
+            <p class="mt-10 text-center" id="js-loader">Chargement en cours...</p>
+
+            <form id="js-jeu-form" class="mt-10 hidden">
+                <div>
+                    <label for="choix" class="sr-only">Entrez votre choix</label>
+                    <select name="choix" id="choix" class="mt-2 border border-gray-400 bg-gray-200 focus:bg-white text-gray-900 appearance-none inline-block w-full rounded py-3 px-4 focus:outline-none" required>
+                        <option value="">Choisissez entre pierre, papier et ciseaux</option>
+                        <option value="pierre">Pierre</option>
+                        <option value="papier">Papier</option>
+                        <option value="ciseaux">Ciseaux</option>
+                    </select>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="w-full py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Jouer</button>
+                </div>
+            </form>
+
+            <div id="js-resultat" class="mt-10 hidden"></div>
+        </div>
+    </main>
+
+    <script>
+        async function main() {
+            const pyodide = await loadPyodide({
+                indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.0/full/"
+            });
+    
+            // Définir la fonction Python pour jouer à pierre-papier-ciseaux
+            pyodide.runPython(`
+                import random
+    
+                def jouer_pierre_papier_ciseaux(choix_joueur):
+                    choix_ordi = random.choice(['pierre', 'papier', 'ciseaux'])
+    
+                    if choix_joueur == choix_ordi:
+                        return "Match nul !"
+                    elif (choix_joueur == 'pierre' and choix_ordi == 'ciseaux') or \
+                            (choix_joueur == 'papier' and choix_ordi == 'pierre') or \
+                            (choix_joueur == 'ciseaux' and choix_ordi == 'papier'):
+                        return "Félicitations, vous avez gagné !"
+                    else:
+                        return "Dommage, vous avez perdu. Essayez encore !"
+            `);
+    
+            // Récupérer les éléments HTML nécessaires
+            const jeuForm = document.getElementById('js-jeu-form');
+            const resultatDiv = document.getElementById('js-resultat');
+    
+            // Cacher le loader et afficher le formulaire de jeu
+            document.getElementById('js-loader').classList.add('hidden');
+            jeuForm.classList.remove('hidden');
+    
+            // Gérer la soumission du formulaire
+            jeuForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+    
+                // Récupérer la valeur du choix de l'utilisateur
+                const choix = document.getElementById('choix').value;
+    
+                // Appeler la fonction Python pour jouer à pierre-papier-ciseaux avec le choix de l'utilisateur
+                const resultat = pyodide.runPython(`jouer_pierre_papier_ciseaux('${choix}')`);
+    
+                // Afficher le résultat dans le div de résultats
+                resultatDiv.innerText = resultat;
+
+                // Afficher le div de résultats
+                resultatDiv.classList.remove('hidden');
+            });
+        }
+    
+        main();
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+        <link rel="stylesheet" href="css/projets.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="c.html">code en C</a></li>
+                <li><a href="cyber.html">Cyber</a></li>
+                <li><a href="reseau.html">Réseau</a></li>
+                <li><a href="parole.html">Prise de parole en public</a></li>
+            </ul>
+        </div>
+        <img src="images/hamburger.png" alt="menu hamburger" class="menu-hamburger">
+    </header>
+    <div>
+        <h1>Projet: Web</h1>
+    </div>
+    <main>
+        <div class="container">
+            <div>
+                <h2>But du projet</h2>
+            </div>
+            <div>
+                <p>Le but de mon premier projet était de créer un site en HTML et CSS sur le jeu de mon choix. Pour le deuxième, j'ai dû concevoir un site sur les différents projets que j'ai réalisés tout au long de l'année en utilisant du JavaScript et le framework Materialize. Pour mon troisième et dernier projet, j'ai dû reprendre le deuxième site et le transformer en un site PHP avec MySQL.</p>
+            </div>
+            <div>
+                <h2>Contraintes</h2>
+            </div>
+            <div>
+                <p>Les contraintes que j'avais pour ces trois projets étaient de créer des sites qui soient responsives, notamment grâce à Materialize. Mes sites devaient être optimisés pour le référencement naturel (SEO). En PHP, je devais intégrer un formulaire d'inscription et de connexion qui serait géré par un rôle administrateur et un panneau d'administration pour gérer les utilisateurs et les pages directement sur le site. Enfin, mes sites devaient être protégés contre les injections SQL et chaque page devait être accessible uniquement par les utilisateurs autorisés.</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/projets.js"></script>
+</body>
+    <script>
+        const menuHamburger = document.querySelector(" .menu-hamburger ") 
+        const navLinks = document.querySelector(" header .container ") 
+    
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
+   </script>
+
+</html>

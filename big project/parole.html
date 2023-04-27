@@ -1,0 +1,62 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+        <link rel="stylesheet" href="css/projets.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="c.html">code en C</a></li>
+                <li><a href="cyber.html">Cyber</a></li>
+                <li><a href="reseau.html">Réseau</a></li>
+                <li><a href="web.html">Web</a></li>
+            </ul>
+        </div>
+        <img src="images/hamburger.png" alt="menu hamburger" class="menu-hamburger">
+    </header>
+    <div>
+        <h1>Projet: Prise de parole en public</h1>
+    </div>
+    <main>
+        <div class="container">
+            <div>
+                <h2>But du projet</h2>
+            </div>
+            <div>
+                <p>Ce projet avait pour but de nous entraîner à prendre la parole en public devant un auditoire que nous ne connaissions pas.</p>
+            </div>
+            <div>
+                <h2>Contraintes</h2>
+            </div>
+            <div>
+                <p>Pour ce projet, nous devions nous mettre en groupe avec des personnes que nous ne connaissions pas, puis préparer et présenter un exposé sur un thème de notre choix devant un auditoire.</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/projets.js"></script>
+</body>
+<script>
+    const menuHamburger = document.querySelector(" .menu-hamburger ") 
+    const navLinks = document.querySelector(" header .container ") 
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+</script>
+</html>

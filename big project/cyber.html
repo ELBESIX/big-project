@@ -1,0 +1,62 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+        <link rel="stylesheet" href="css/projets.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="c.html">code en C</a></li>
+                <li><a href="web.html">Web</a></li>
+                <li><a href="reseau.html">Réseau</a></li>
+                <li><a href="parole.html">Prise de parole en public</a></li>
+            </ul>
+        </div>
+        <img src="images/hamburger.png" alt="menu hamburger" class="menu-hamburger">
+    </header>
+    <div>
+        <h1>Projet: Cyber</h1>
+    </div>
+    <main>
+        <div class="container">
+            <div>
+                <h2>But du projet</h2>
+            </div>
+            <div>
+                <p>Le but de notre projet en cybersécurité était d'avoir une première approche de ce domaine en créant une carte mentale des différentes attaques. Cette carte nous permettra de mieux diagnostiquer une attaque à l'avenir en utilisant le travail préliminaire que nous avons effectué.</p>
+            </div>
+            <div>
+                <h2>Contraintes</h2>
+            </div>
+            <div>
+                <p>Pour ce projet, nous devions créer une carte mentale répertoriant les différents types d'attaques cybernétiques, ainsi que les conséquences associées. Nous devions également lister les précautions à prendre pour éviter ces types d'attaques, ainsi que les mesures à prendre en cas d'attaque avérée.</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/projets.js"></script>
+</body>
+<script>
+    const menuHamburger = document.querySelector(" .menu-hamburger ") 
+    const navLinks = document.querySelector(" header .container ") 
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+</script>
+</html>

@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+button {
+    font-family: 'Lilita One', cursive;
+}
+
+body{
+    background: no-repeat;
+    text-align: center;
+    background-image: url(../images/plage.png);
+}
+
+header{
+    height: 120px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute; 
+}
+
+header .container{
+    width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+header .container ul{
+    display: flex;
+    align-items: center;
+}
+
+header .container a{
+    font-family: 'Lilita One', cursive;
+    color: #88BB71 !important;
+    font-size: 1.3em;
+    margin: 0 30px;
+}
+
+header .container a:hover{
+    color: #435a39 !important;
+}
+
+
+h1{
+    font-size: 90px;
+    color: #45B0F3;
+    margin-right: 25%;
+    margin-top: 10%;
+}
+
+p{
+    font-family: 'DynaPuff', cursive;
+    font-size: 18px;
+    margin-bottom: 150px;
+}
+
+main{
+    margin: 300px 350px 350px 350px;
+    color: #4FBBFD;
+}
+
+.carrousel-container{
+    background-color: #435a39;
+}
+
+.menu-hamburger{
+    display: none;
+}
+
+@media screen and (max-width: 900px){
+    
+    header{
+        height: 120px;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute; 
+    }
+
+    .menu-hamburger{
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    
+    header .container{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0;
+        backdrop-filter: blur(7px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: 0.5s ease;
+    }
+
+    header .mobile-menu{
+        margin-left: 0;
+    }
+    
+    header .container ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    header .container a{
+        font-family: 'Lilita One', cursive;
+        color: #739c61 !important;
+        font-size: 1.5em;
+    }
+
+    body{
+        text-align: center;
+        background-image: url(../images/plage2.png);
+    }
+
+    h1{
+        font-size: 30px;
+        color: #45B0F3;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    p{
+        font-family: 'DynaPuff', cursive;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    main{
+        margin: 30px 35px 35px 35px;
+        color: #4FBBFD;
+    }
+    
+    .carrousel-container{
+        display: none;
+    }
+}
