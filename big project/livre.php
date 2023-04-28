@@ -24,7 +24,7 @@
 			// Connexion à la base de données
 			$host = "localhost";
 			$user = "root";
-			$password = "root";
+			$password = "";
 			$dbname = "big-project";
 
 			$conn = mysqli_connect($host, $user, $password, $dbname);
